@@ -1,5 +1,14 @@
 [English README](README-en.md)
 
+アセット: VRChat想定スクロール式イベントカレンダー
+バージョン: 1.0
+
+制作: bd_ ([@bd_j][1])
+デザイン: Kotonoshi ([@color_kotonoshi][2])
+
+[1]: https://twitter.com/bd_j
+[2]: https://twitter.com/color_kotonoshi
+
 # 概要
 このアセットは、カッコウ様が運営する[VRChatイベントカレンダー][1]の情報を、VRChat内で表示するアセットです。イベントが多い日の対策として、スクロールできる仕様となっています。
 
@@ -16,16 +25,16 @@ AlbedoおよびMain MapsのTilingやOffsetをいじると崩壊するのでご�
 UnlitCalendarはUnlitシェーダーベースなので、Unlit系統のワールドなら配置しやすいかもしれません。
 明度はある程度CalendarMatのBrightness値で調節できます。
 
-注意：　スポーンのすぐ近く、なおかつ低い位置に配置するとスクロールがうまく作動しない場合があります。
-　　　　１メートルぐらいスポーンから離して配置したほうがいいかもしれません。
+【注意】スポーンのすぐ近く、なおかつ低い位置に配置するとスクロールがうまく作動しない場合があります。
+１メートルぐらいスポーンから離して配置したほうがいいかもしれません。
 
 ## 明度調整
 このアセットは一部Unlit系統のシェーダーを使っているため、通常の照明や影の影響を受けない場合があります。
 明度の調整が必要になった場合は、以下のところを調整してみてください
 
-・【UnlitCalendarを使用する場合】CalendarMatマテリアルのBrightness値
-・プレハブ内のScrollbarオブジェクトのNormal Color値（スクロールバーの背景を調整できます）
-・プレハブ内のHandleオブジェクトのColor値（スクロールバーのハンドルの色を調整できます）
+1. 【UnlitCalendarを使用する場合】CalendarMatマテリアルのBrightness値
+2. プレハブ内のScrollbarオブジェクトのNormal Color値（スクロールバーの背景を調整できます）
+3. プレハブ内のHandleオブジェクトのColor値（スクロールバーのハンドルの色を調整できます）
 
 # 利用規約
 Unityプレハブ、ローディング画像は[Creative Commons CC0]にて著作権を放棄しています。

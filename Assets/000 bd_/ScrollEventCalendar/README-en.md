@@ -1,8 +1,11 @@
 Asset: VRChat scroll-style event calendar
 Version: 1.0
 
-Development: bd_
-Design: Kotonoshi (@color_kotonoshi)
+Development: bd_ ([@bd_j][1])
+Design: Kotonoshi ([@color_kotonoshi][2])
+
+[1]: https://twitter.com/bd_j
+[2]: https://twitter.com/color_kotonoshi
 
 # Overview
 
@@ -24,8 +27,8 @@ UnlitCalendar is based on an unlit shader, and may be easier to use in worlds th
 The brightness can be adjusted a bit in the CalendarMat material.
 
 Note: When placed near the floor near spawn, there are cases where it may not be possible to drag the
-      scrollbar to the bottom of the display. It is recommended to place it at least a meter or so from
-      spawn.
+scrollbar to the bottom of the display. It is recommended to place it at least a meter or so from
+spawn.
 
 ## Brightness adjustment
 
@@ -33,9 +36,9 @@ The UnlitCalendar asset, as well as the scrollbar elements on the StdCalendar as
 and therefore aren't influenced by world lighting and shadows. If brightness adjustment is required, please
 adjust the following values.
 
-* The Brightness value in the CalendarMat material (if using UnlitCalendar)
-* The Normal color setting on the Scrollbar object within the prefab
-* The Color setting on the Handle object within the prefab
+1. The Brightness value in the CalendarMat material (if using UnlitCalendar)
+2. The Normal color setting on the Scrollbar object within the prefab
+3. The Color setting on the Handle object within the prefab
 
 # License
 
