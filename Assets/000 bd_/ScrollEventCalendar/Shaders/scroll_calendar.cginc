@@ -555,16 +555,20 @@ struct scrollcal_render_plan scrollcal_plan_main(struct scrollcal_context ctx, f
 }
 
 fixed4 scrollcal_sample_plan(struct scrollcal_context ctx, struct scrollcal_render_plan plan, float2 uv_px) {
-    // XXX: Why 1.5???
-    float2 base_uv = uv_px / 1.5;
+    float2 base_uv = uv_px;
     float2 dx_uv = ddx(base_uv);
     float2 dy_uv = ddy(base_uv);
 
-    //float mip = 0.5 * log2(min(sqr_del_max, sqr_del_min * 900));
-    float mip = 0.5 * log2(max(dot(dx_uv, dx_uv), dot(dy_uv, dy_uv)));
-    mip = min(mip, 3);
+    float dx_dot = dot(dx_uv, dx_uv);
+    float dy_dot = dot(dy_uv, dy_uv);
 
-    float lod_clamp = 2;
+    float max_del_sq = max(dx_dot, dy_dot);
+    // When viewing at an oblique angle, avoid things getting too blurry by clamping how high the mip level
+    // can go based on the direction with the lower gradient. This is really just a workaround for the lack
+    // of anisotropic filtering for panorama textures...
+    float cap_del_sq = min(dx_dot, dy_dot) * 8;
+
+    float mip = 0.5 * log2(min(max_del_sq, cap_del_sq));
 
     fixed4 bg = _MainTex.SampleLevel(SCROLLCAL_SAMPLER_TEX, plan.background_uv, mip);
     fixed4 overlay = fixed4(0,0,0,0);
