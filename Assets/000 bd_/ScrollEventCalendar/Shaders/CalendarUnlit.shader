@@ -1,4 +1,14 @@
-﻿Shader "bd_/VRC Scroll Event Calendar (unlit)"
+﻿// Developed by bd_ <bdunderscore@fushizen.net>
+// Dedicated to the public domain under the Creative Commons CC0 Public Domain Dedication.
+// See CC0.txt
+//
+// To the extent possible under law, the person who associated CC0 with this work has waived
+// all copyright and related or neighboring rights to this work. 
+// This work is published from: United States.
+//
+
+
+Shader "bd_/VRC Scroll Event Calendar (unlit)"
 {
     Properties
     {
