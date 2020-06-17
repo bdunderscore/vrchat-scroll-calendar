@@ -1,7 +1,7 @@
-Asset: VRChat scroll-style event calendar
-Version: 1.0
+Asset: VRChat scroll-style event calendar<br>
+Version: 1.0<br>
 
-Development: bd_ ([@bd_j][1])
+Development: bd_ ([@bd_j][1])<br>
 Design: Kotonoshi ([@color_kotonoshi][2])
 
 [1]: https://twitter.com/bd_j
