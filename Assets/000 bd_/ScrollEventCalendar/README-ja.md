@@ -1,4 +1,4 @@
-[English README](README-en.md)
+[English README](https://github.com/bdunderscore/vrchat-scroll-calendar/blob/trunk/Assets/000%20bd_/ScrollEventCalendar/README-en.md)
 
 アセット: VRChat想定スクロール式イベントカレンダー<br>
 バージョン: 1.0
