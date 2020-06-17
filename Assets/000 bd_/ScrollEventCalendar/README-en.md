@@ -9,10 +9,10 @@ Design: Kotonoshi ([@color_kotonoshi][2])
 
 # Overview
 
-This asset displays data from the [VRChat event calendar][1] operated by Cuckoo (@nest_cuckoo) within a VRChat world.
+This asset displays data from the [VRChat event calendar][10] operated by Cuckoo (@nest_cuckoo) within a VRChat world.
 It supports scrolling through the displayed events to deal with cases where the event list overflows the display.
 
-[1]: https://sites.google.com/view/vrchat-event
+[10]: https://sites.google.com/view/vrchat-event
 
 # Usage
 
@@ -42,30 +42,31 @@ adjust the following values.
 
 # License
 
-The unity prefab and loading image are dedicated to the public domain under the Creative Commons CC0 Public Domain Dedication.
-Please see https://creativecommons.org/publicdomain/zero/1.0/ or LICENSE-CC0.txt
+The unity prefab and loading image are dedicated to the public domain under the [Creative Commons CC0 Public Domain Dedication][41].
+Please see https://creativecommons.org/publicdomain/zero/1.0/ or [LICENSE-CC0.txt](LICENSE-CC0.txt).
 
-The shader code is released under a combination of CC0 and the [MIT license][2]. Please check the headers for the relevant files for
+The shader code is released under a combination of CC0 and the [MIT license][42]. Please check the headers for the relevant files for
 more details.
 
 The image loaded from the URL configured in the asset can be displayed using this asset
 in VRChat worlds. Any other redistribution or modification is forbidden.
 Please change the URL if you redistribute modified versions of this asset.
 
-[2]: LICENSE-MIT.txt
+[41]: https://creativecommons.org/publicdomain/zero/1.0/deed.en
+[42]: LICENSE-MIT.txt
 
 === Credits ===
 
-This asset was inspired by Tsubokura Teruaki's VRChat Event Calendar.
+This asset was inspired by [Tsubokura Teruaki][59]'s [VRChat Event Calendar][60].
 
-The data for the calendar is sourced from Cuckoo (@nest_cuckoo_)'s VRChat Event Calendar.
+The data for the calendar is sourced from Cuckoo ([@nest_cuckoo_][51])'s VRChat Event Calendar.
 To register or update events, please see https://sites.google.com/view/vrchat-event
 
-Graphic design, color assignments, and the header image on display at time of initial release were done by Kotonoshi (@color_kotonoshi).
+Graphic design, color assignments, and the header image on display at time of initial release were done by Kotonoshi ([@color_kotonoshi][52]).
 
-The scroll syncing system is based loosely on the approach used by Phasedragon's Synced sliders prefab.
-Thanks to Yukatayu, Hakotsuki, Ram.Type-0, and PhaxeNor for shader advice.
+The scroll syncing system is based loosely on the approach used by [Phasedragon][53]'s Synced sliders prefab.
+Thanks to [Yukatayu][54], [Hakotsuki][55], [Ram.Type-0][56], and [PhaxeNor][57] for shader advice.
 
-Thanks to Kamishiro Aoi for assisting with testing during the closed alpha period.
+Thanks to [Kamishiro Aoi][58] for assisting with testing during the closed alpha period.
 
 　　　　　　　　　　　　AND YOU　　　　　
