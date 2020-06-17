@@ -55,7 +55,7 @@ Please change the URL if you redistribute modified versions of this asset.
 [41]: https://creativecommons.org/publicdomain/zero/1.0/deed.en
 [42]: LICENSE-MIT.txt
 
-=== Credits ===
+# Credits
 
 This asset was inspired by [Tsubokura Teruaki][59]'s [VRChat Event Calendar][60].
 
