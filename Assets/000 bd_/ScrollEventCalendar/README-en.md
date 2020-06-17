@@ -47,6 +47,7 @@ more details.
 
 The image loaded from the URL configured in the asset can be displayed using this asset
 in VRChat worlds. Any other redistribution or modification is forbidden.
+Please change the URL if you redistribute modified versions of this asset.
 
 === Credits ===
 
