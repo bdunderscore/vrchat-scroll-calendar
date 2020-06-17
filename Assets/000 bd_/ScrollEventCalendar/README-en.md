@@ -6,10 +6,10 @@ Design: Kotonoshi (@color_kotonoshi)
 
 # Overview
 
-This asset displays data from the VRChat event calendar [1] operated by Cuckoo (@nest_cuckoo) within a VRChat world.
+This asset displays data from the [VRChat event calendar][1] operated by Cuckoo (@nest_cuckoo) within a VRChat world.
 It supports scrolling through the displayed events to deal with cases where the event list overflows the display.
 
-[1] - https://sites.google.com/view/vrchat-event
+[1]: https://sites.google.com/view/vrchat-event
 
 # Usage
 
@@ -42,12 +42,14 @@ adjust the following values.
 The unity prefab and loading image are dedicated to the public domain under the Creative Commons CC0 Public Domain Dedication.
 Please see https://creativecommons.org/publicdomain/zero/1.0/ or LICENSE-CC0.txt
 
-The shader code is released under a combination of CC0 and the MIT license. Please check the headers for the relevant files for
+The shader code is released under a combination of CC0 and the [MIT license][2]. Please check the headers for the relevant files for
 more details.
 
 The image loaded from the URL configured in the asset can be displayed using this asset
 in VRChat worlds. Any other redistribution or modification is forbidden.
 Please change the URL if you redistribute modified versions of this asset.
+
+[2]: LICENSE-MIT.txt
 
 === Credits ===
 

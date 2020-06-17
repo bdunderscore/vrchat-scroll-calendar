@@ -1,7 +1,9 @@
-# 概要
-このアセットは、カッコウ様が運営するVRChatイベントカレンダー[1]の情報を、VRChat内で表示するアセットです。イベントが多い日の対策として、スクロールできる仕様となっています。
+[English README](README-en.md)
 
-[1] - https://sites.google.com/view/vrchat-event
+# 概要
+このアセットは、カッコウ様が運営する[VRChatイベントカレンダー][1]の情報を、VRChat内で表示するアセットです。イベントが多い日の対策として、スクロールできる仕様となっています。
+
+[1]: https://sites.google.com/view/vrchat-event
 
 # 導入方法
 StdCalendarもしくはUnlitCalendarをシーンに配置し、位置やサイズを調整してください。
@@ -26,16 +28,18 @@ UnlitCalendarはUnlitシェーダーベースなので、Unlit系統のワール
 ・プレハブ内のHandleオブジェクトのColor値（スクロールバーのハンドルの色を調整できます）
 
 # 利用規約
-Unityプレハブ、ローディング画像はCreative Commons CC0にて著作権を放棄しています。
-詳しくはこちらに参照→https://creativecommons.org/publicdomain/zero/1.0/deed.ja
-もしくはLICENSE-CC0.txtにて原文があります。
+Unityプレハブ、ローディング画像は[Creative Commons CC0]にて著作権を放棄しています。
+LICENSE-CC0.txtにて原文があります。
 
-シェーダーコードはファイルによってはCC0もしくはMIT Licenseにて配布しています。
+シェーダーコードはファイルによってはCC0もしくは[MIT License][2]にて配布しています。
 詳しくは該当ファイルのヘッダーを確認してください。
 
 プレハブに設定されているカレンダーテキスチャーURLで配信されている画像は、
 このアセットでVRChatワールド内に表示することを許可しますが、改変・再配布は禁止します。
 また、このアセットを改変・再配布する場合はURLを変えていただけると助かります。
+
+[1]: https://creativecommons.org/publicdomain/zero/1.0/deed.ja 
+[2]: LICENSE-MIT.txt
 
 # クレジット
 元々、坪倉輝明様の「VRChatイベントカレンダー」を参考にして作ったアセットです。
