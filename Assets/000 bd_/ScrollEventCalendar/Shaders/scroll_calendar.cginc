@@ -565,7 +565,7 @@ struct scrollcal_render_plan scrollcal_plan_main(struct scrollcal_context ctx, f
 }
 
 fixed4 scrollcal_sample_plan(struct scrollcal_context ctx, struct scrollcal_render_plan plan, float2 uv_px) {
-    float2 base_uv = uv_px;
+    float2 base_uv = uv_px / 1.5;
     float2 dx_uv = ddx(base_uv);
     float2 dy_uv = ddy(base_uv);
 
