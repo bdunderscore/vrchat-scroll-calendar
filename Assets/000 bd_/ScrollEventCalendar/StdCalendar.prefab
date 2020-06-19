@@ -10,7 +10,7 @@ PrefabInstance:
     - target: {fileID: 64674938673299890, guid: 396e95b6f9d78aa45a802f3687ce9923,
         type: 3}
       propertyPath: m_Name
-      value: ScrollEventCalendar (1)
+      value: StdCalendar
       objectReference: {fileID: 0}
     - target: {fileID: 64674938673299901, guid: 396e95b6f9d78aa45a802f3687ce9923,
         type: 3}
@@ -77,6 +77,11 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 5e533e85aa0f43649b22c51153177c51, type: 2}
+    - target: {fileID: 216481668389822262, guid: 396e95b6f9d78aa45a802f3687ce9923,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 85
+      objectReference: {fileID: 0}
     - target: {fileID: 216481669181201566, guid: 396e95b6f9d78aa45a802f3687ce9923,
         type: 3}
       propertyPath: m_AnchorMax.x
