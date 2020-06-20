@@ -13,6 +13,7 @@ Shader "bd_/VRC Scroll Event Calendar (unlit)"
     Properties
     {
         _MainTex ("Texture", 2D) = "white" {}
+        _FallbackTex ("Fallback texture", 2D) = "white" {}
         _Position ("Position", Range(0,1)) = 0.0
         _Brightness ("Brightness", Range(0,1)) = 1.0
     }
@@ -45,6 +46,7 @@ Shader "bd_/VRC Scroll Event Calendar (unlit)"
             struct v2f
             {
                 UNITY_FOG_COORDS(0)
+                float2 uv : TEXCOORD0;
                 SCROLLCAL_CTX_V2F
                 float4 vertex : SV_POSITION;
             };
@@ -55,6 +57,7 @@ Shader "bd_/VRC Scroll Event Calendar (unlit)"
                 o.vertex = UnityObjectToClipPos(v.vertex);
 
                 SCROLLCAL_CTX_TO_V2F(o, v.uv);
+                o.uv = v.uv;
                 
                 UNITY_TRANSFER_FOG(o,o.vertex);
                 return o;
@@ -64,7 +67,7 @@ Shader "bd_/VRC Scroll Event Calendar (unlit)"
             {
                 SCROLLCAL_CTX_FROM_V2F(ctx, i);
 
-                return scrollcal_albedo(ctx);
+                return scrollcal_albedo(ctx, i.uv);
             }
             ENDCG
         }

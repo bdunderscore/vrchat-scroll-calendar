@@ -86,7 +86,7 @@ half DetailMask(float2 uv)
 
 half3 Albedo(struct scrollcal_context ctx, float4 texcoords)
 {
-    half3 albedo = _Color.rgb * scrollcal_albedo(ctx);
+    half3 albedo = _Color.rgb * scrollcal_albedo(ctx, texcoords.xy);
 #if _DETAIL
     #if (SHADER_TARGET < 30)
         // SM20: instruction count limitation

@@ -44,6 +44,7 @@
 
 #define SCROLLCAL_DAY_HEADER_BLEND 3
 
+Texture2D _FallbackTex;
 Texture2D _MainTex;
 SamplerState SCROLLCAL_SAMPLER_POINT;
 SamplerState SCROLLCAL_SAMPLER_TEX;
@@ -609,8 +610,13 @@ fixed4 scrollcal_sample_plan(struct scrollcal_context ctx, struct scrollcal_rend
     }
 }
 
-fixed4 scrollcal_albedo(struct scrollcal_context ctx) {
+fixed4 scrollcal_albedo(struct scrollcal_context ctx, float2 original_uv) {
     float2 uv_px = ctx.viewport_size.xy;
+
+    if (ctx.data_width > 1024) {
+        return _FallbackTex.Sample(scrollcal_sampler_trilinear_clamp, original_uv);
+    }
+
     float cutoff_header_sides = ctx.borders.x + ctx.other_tex_params.z;
 
     struct scrollcal_render_plan plan;

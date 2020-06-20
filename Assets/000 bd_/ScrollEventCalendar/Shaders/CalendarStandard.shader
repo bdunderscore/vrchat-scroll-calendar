@@ -7,6 +7,7 @@ Shader "bd_/VRC Scroll Event Calendar (standard)"
     {
         _Color("Color", Color) = (1,1,1,1)
         _MainTex("Texture", 2D) = "white" {}
+        _FallbackTex ("Fallback texture", 2D) = "white" {}
 
         _Cutoff("Alpha Cutoff", Range(0.0, 1.0)) = 0.5
 
