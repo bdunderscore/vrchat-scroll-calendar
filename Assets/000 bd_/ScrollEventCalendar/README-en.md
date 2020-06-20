@@ -16,7 +16,8 @@ It supports scrolling through the displayed events to deal with cases where the 
 
 # Usage
 
-Place either the StdCalendar or UnlitCalendar prefab in the scene, and adjust the position and
+1. Ensure that there is an Event System component in your scene. If not, create a UI canvas, then delete it. An Event System component will be automatically added.
+2. Place either the StdCalendar or UnlitCalendar prefab in the scene, and adjust the position and
 scale as desired. Please avoid adjusting the aspect ratio of the prefab.。
 
 StdCalendar is based on the Unity Standard shader, and is therefore influenced by world shadows and lighting.
