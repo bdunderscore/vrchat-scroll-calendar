@@ -21,8 +21,9 @@
 [11]: https://github.com/bdunderscore/vrchat-scroll-calendar/releases
 
 # 導入方法
-StdCalendarもしくはUnlitCalendarをシーンに配置し、位置やサイズを調整してください。
-アス比は変えないようにご注意ください。
+
+1. ワールドのどこかにEvent Systemコンポーネントがない場合、一度どこかにUI Canvasを作って削除してください（Event Systemが自動的に追加されます）
+2. StdCalendarもしくはUnlitCalendarをシーンに配置し、位置やサイズを調整してください。アス比は変えないようにご注意ください。
 
 StdCalendarはStandardシェーダーベースなので影、光源の影響を受けます。
 また、CalendarMatStdマテリアルを調整することでいろいろと調節できます。
