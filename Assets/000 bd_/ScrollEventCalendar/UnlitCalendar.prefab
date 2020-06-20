@@ -622,7 +622,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   renderer: {fileID: 8829912458127208546}
   panoramas:
-  - url: https://vrc-calendar.fushizen.net/calendar-release-1.png
+  - url: https://vrc-calendar.fushizen.net/calendar-release-2.png
     texture: {fileID: 0}
 --- !u!1 &8829912458604426406
 GameObject:
