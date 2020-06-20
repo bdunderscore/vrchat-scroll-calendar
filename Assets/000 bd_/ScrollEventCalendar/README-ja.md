@@ -14,6 +14,12 @@
 
 [10]: https://sites.google.com/view/vrchat-event
 
+# ダウンロード
+
+[ダウンロードページ][11]から最新版をダウンロードしてください。
+
+[11]: https://github.com/bdunderscore/vrchat-scroll-calendar/releases
+
 # 導入方法
 StdCalendarもしくはUnlitCalendarをシーンに配置し、位置やサイズを調整してください。
 アス比は変えないようにご注意ください。
