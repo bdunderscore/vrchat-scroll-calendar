@@ -39,14 +39,12 @@
 
 #define SCROLLCAL_IS_DAY_HEADER (1 << 17)
 
-#define SCROLLCAL_SAMPLER_POINT scrollcal_sampler_point_clamp
 #define SCROLLCAL_SAMPLER_TEX scrollcal_sampler_trilinear_clamp
 
 #define SCROLLCAL_DAY_HEADER_BLEND 3
 
 Texture2D _FallbackTex;
 Texture2D _MainTex;
-SamplerState SCROLLCAL_SAMPLER_POINT;
 SamplerState SCROLLCAL_SAMPLER_TEX;
 float4 _MainTex_TexelSize;
 float4 _MainTex_ST;
@@ -66,6 +64,16 @@ float2 scrollcal_px_to_uv(int2 px) {
     return px_f;
 }
 
+uint2 scrollcal_index_to_px(uint data_width, uint offset) {
+    uint row = offset / data_width;
+    uint col = offset % data_width;
+
+    int x = (int)_MainTex_TexelSize.z - 1 - col;
+    int y = (int)_MainTex_TexelSize.w - 1 - row;
+
+    return uint2(x,y);
+}
+
 float2 scrollcal_index_to_uv(uint data_width, uint offset) {
     uint row = offset / data_width;
     uint col = offset % data_width;
@@ -73,11 +81,11 @@ float2 scrollcal_index_to_uv(uint data_width, uint offset) {
     int x = (int)_MainTex_TexelSize.z - 1 - col;
     int y = (int)_MainTex_TexelSize.w - 1 - row;
 
-    return scrollcal_px_to_uv(int2(x,y));
+    return scrollcal_px_to_uv(scrollcal_index_to_px(data_width, offset));
 }
 
 fixed4 scrollcal_load_rgb(int data_width, int index) {
-    return _MainTex.SampleLevel(SCROLLCAL_SAMPLER_POINT, scrollcal_index_to_uv(data_width, index), 0);
+    return _MainTex.Load(int3(scrollcal_index_to_px(data_width, index), 0));
 }
 
 int scrollcal_load_int(int data_width, int index) {
@@ -85,11 +93,7 @@ int scrollcal_load_int(int data_width, int index) {
 }
 
 int scrollcal_load_data_width() {
-    return scrollcal_decode_rgb(_MainTex.SampleLevel(
-        SCROLLCAL_SAMPLER_POINT,
-        float2(1.0, 1.0) - (float2(0.5, 0.5) * _MainTex_TexelSize.xy),
-        0
-    ));
+    return scrollcal_decode_rgb(_MainTex.Load(int3(_MainTex_TexelSize.z - 1, _MainTex_TexelSize.w - 1, 0)));
 }
 
 #define SCROLLCAL_CTX_V2F \
@@ -280,7 +284,7 @@ struct scrollcal_render_plan {
     // This is dotted into the texture at text_uv to compute an alpha value
     fixed4 colormask;
 
-    float2 palette_uv;
+    int2 palette_uv;
     bool overlay_above_text;
 
     float overlay_alpha_mul;
@@ -293,7 +297,7 @@ struct scrollcal_render_plan scrollcal_plan_fixed(struct scrollcal_context ctx, 
     plan.overlay_alpha_uv = float2(-1, -1);
     plan.text_uv = float2(-1, -1);
     plan.colormask = fixed4(0,0,0,0);
-    plan.palette_uv = float2(-1, -1);
+    plan.palette_uv = int2(-1, -1);
     plan.overlay_above_text = false;
     plan.overlay_alpha_mul = 0;
 
@@ -312,7 +316,7 @@ struct scrollcal_render_plan scrollcal_plan_header(struct scrollcal_context ctx,
     plan.overlay_alpha_uv = float2(-1, -1);
     plan.text_uv = float2(-1, -1);
     plan.colormask = fixed4(0,0,0,0);
-    plan.palette_uv = float2(-1, -1);
+    plan.palette_uv = int2(-1, -1);
     plan.overlay_above_text = false;
 
     if (uv_px.y < ctx.split_params.y) {
@@ -418,9 +422,8 @@ int scrollcal_load_vdata(struct scrollcal_context ctx, float2 abs_px) {
     int vdata_len = ctx.other_tex_params.w;
     int base_offset = SCROLLCAL_DSOFF_PREVDH + vdata_len;
 
-    float2 uv_colors = scrollcal_index_to_uv(ctx.data_width, base_offset + v);
-    
-    fixed4 rgb_colors = _MainTex.SampleLevel(SCROLLCAL_SAMPLER_POINT, uv_colors, 0);
+    int2 uv_colors = scrollcal_index_to_px(ctx.data_width, base_offset + v);
+    fixed4 rgb_colors = _MainTex.Load(int3(uv_colors, 0));
 
     struct scrollcal_vdata vdata;
     vdata.prev_day_header = 0;
@@ -560,7 +563,7 @@ struct scrollcal_render_plan scrollcal_plan_main(struct scrollcal_context ctx, f
 
     plan.text_uv = scrollcal_px_to_uv(ctx, textuv.xy);
     plan.colormask = scrollcal_text_colormask(textuv.z);
-    plan.palette_uv = scrollcal_index_to_uv(ctx.data_width, SCROLLCAL_DSOFF_PALETTE + pal_index);
+    plan.palette_uv = scrollcal_index_to_px(ctx.data_width, SCROLLCAL_DSOFF_PALETTE + pal_index);
 
     return plan;
 }
@@ -589,7 +592,7 @@ fixed4 scrollcal_sample_plan(struct scrollcal_context ctx, struct scrollcal_rend
     
     if (plan.text_uv.x >= 0) {
         text = _MainTex.SampleLevel(SCROLLCAL_SAMPLER_TEX, plan.text_uv, mip);
-        text_color = _MainTex.SampleLevel(SCROLLCAL_SAMPLER_POINT, plan.palette_uv, 0);
+        text_color = _MainTex.Load(int3(plan.palette_uv, 0));
     }
 
     if (plan.overlay_uv.x >= 0) {
