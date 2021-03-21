@@ -12,7 +12,7 @@ Design: Kotonoshi ([@color_kotonoshi][2])
 This asset displays data from the [VRChat event calendar][10] operated by Cuckoo (@nest_cuckoo) within a VRChat world.
 It supports scrolling through the displayed events to deal with cases where the event list overflows the display.
 
-[10]: https://sites.google.com/view/vrchat-event
+[10]: https://vrceve.com/
 
 # Usage
 
