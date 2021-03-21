@@ -12,7 +12,7 @@
 # 概要
 このアセットは、カッコウ様が運営する[VRChatイベントカレンダー][10]の情報を、VRChat内で表示するアセットです。イベントが多い日の対策として、スクロールできる仕様となっています。
 
-[10]: https://sites.google.com/view/vrchat-event
+[10]: https://vrceve.com/
 
 # ダウンロード
 
